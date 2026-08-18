@@ -1,0 +1,564 @@
+/* =========================
+   PAGE
+========================= */
+
+.departments-page {
+  padding: 32px;
+  min-height: 100%;
+  background: #f8fafc;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.departments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.departments-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.departments-header p {
+  margin: 7px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+
+/* =========================
+   ADD BUTTON
+========================= */
+
+.add-department-button {
+  border: none;
+  border-radius: 8px;
+  padding: 11px 18px;
+  background: #2563eb;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.add-department-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   SUMMARY
+========================= */
+
+.departments-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  margin-bottom: 16px;
+  padding: 10px 14px;
+
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+
+  color: #475569;
+  font-size: 14px;
+}
+
+.departments-summary strong {
+  color: #0f172a;
+  font-size: 16px;
+}
+
+
+/* =========================
+   TABLE CONTAINER
+========================= */
+
+.departments-table-container {
+  width: 100%;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow-x: auto;
+
+  box-shadow:
+    0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.departments-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+}
+
+
+/* =========================
+   TABLE HEADER
+========================= */
+
+.departments-table thead {
+  background: #f8fafc;
+}
+
+.departments-table th {
+  padding: 15px 18px;
+  text-align: left;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  color: #64748b;
+
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+
+/* =========================
+   TABLE BODY
+========================= */
+
+.departments-table td {
+  padding: 16px 18px;
+
+  font-size: 14px;
+  color: #475569;
+
+  border-bottom: 1px solid #f1f5f9;
+
+  vertical-align: middle;
+}
+
+.departments-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.departments-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.departments-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================
+   DEPARTMENT NAME
+========================= */
+
+.departments-table td:first-child strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.departments-table td:last-child {
+  white-space: nowrap;
+}
+
+.action-button {
+  border: none;
+
+  padding: 7px 12px;
+
+  border-radius: 6px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  margin-right: 8px;
+
+  transition: 0.2s ease;
+}
+
+.action-button:hover {
+  background: #dbeafe;
+}
+
+.action-button.delete {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.action-button.delete:hover {
+  background: #fee2e2;
+}
+
+.departments-table td:last-child
+.action-button:last-child {
+  margin-right: 0;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.departments-message {
+  padding: 50px 20px;
+
+  text-align: center;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.departments-error {
+  padding: 18px;
+
+  background: #fef2f2;
+
+  border: 1px solid #fecaca;
+
+  border-radius: 10px;
+
+  color: #b91c1c;
+}
+
+.departments-error p {
+  margin: 0 0 10px;
+}
+
+.departments-error button {
+  border: none;
+
+  padding: 8px 14px;
+
+  border-radius: 6px;
+
+  background: #dc2626;
+  color: white;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty-message {
+  padding: 45px !important;
+
+  text-align: center !important;
+
+  color: #94a3b8 !important;
+}
+
+
+/* =========================
+   MODAL OVERLAY
+========================= */
+
+.department-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.55);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.department-modal {
+  width: 100%;
+  max-width: 600px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: white;
+
+  border-radius: 14px;
+
+  padding: 28px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 20px 50px rgba(15, 23, 42, 0.2);
+}
+
+
+/* =========================
+   MODAL HEADER
+========================= */
+
+.department-modal-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 24px;
+}
+
+.department-modal-header h2 {
+  margin: 0;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  color: #0f172a;
+}
+
+.department-modal-header button {
+  width: 34px;
+  height: 34px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  background: #f1f5f9;
+
+  color: #64748b;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.department-modal-header button:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+
+/* =========================
+   FORM ERROR
+========================= */
+
+.department-form-error {
+  margin-bottom: 18px;
+
+  padding: 11px 13px;
+
+  border: 1px solid #fecaca;
+
+  border-radius: 7px;
+
+  background: #fef2f2;
+
+  color: #b91c1c;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.department-modal .form-group {
+  margin-bottom: 18px;
+}
+
+.department-modal .form-group label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #334155;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.department-modal .form-group input,
+.department-modal .form-group textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 11px 12px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 7px;
+
+  background: white;
+
+  color: #0f172a;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+.department-modal .form-group input::placeholder,
+.department-modal .form-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+.department-modal .form-group input:focus,
+.department-modal .form-group textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.department-modal .form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+
+/* =========================
+   FORM ACTIONS
+========================= */
+
+.department-form-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+.department-form-actions button {
+  border: none;
+
+  padding: 10px 18px;
+
+  border-radius: 7px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+/* CANCEL */
+
+.department-form-actions button[type="button"] {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.department-form-actions button[type="button"]:hover {
+  background: #e2e8f0;
+}
+
+
+/* SAVE / UPDATE */
+
+.department-form-actions button[type="submit"] {
+  background: #2563eb;
+  color: white;
+}
+
+.department-form-actions button[type="submit"]:hover {
+  background: #1d4ed8;
+}
+
+
+/* DISABLED */
+
+.department-form-actions button:disabled,
+.department-modal input:disabled,
+.department-modal textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .departments-page {
+    padding: 20px;
+  }
+
+  .departments-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .add-department-button {
+    width: 100%;
+  }
+
+  .department-modal {
+    padding: 20px;
+  }
+
+  .department-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .department-form-actions button {
+    width: 100%;
+  }
+}
